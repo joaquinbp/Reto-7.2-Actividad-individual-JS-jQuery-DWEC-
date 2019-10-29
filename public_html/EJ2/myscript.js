@@ -1,21 +1,34 @@
-
+var cont=0;
+var tabla=document.getElementById("tabla");
+var filas=tabla.getElementsByTagName("tr");
+var celdas=tabla.getElementsByTagName("td");
 function $(selector){
     return document.querySelector(selector);
 }
 
 function insertar(){
-    var ultimaFila=false;
-    console.log(document.getElementById("tabla").rows.length);
-    if(document.getElementById("tabla").rows.length>0){
-        ultimaFila=document.getElementById("tabla").lastChild;
-        console.log("hola");
-    } 
-    if(!ultimaFila || document.getElementById("tabla").lastChild.length==7){
-        $("table").innerHTML="<tr><td><img src='http://lorempixel.com/400/200/?1234567890'></td></tr>";
-        console.log("hola2");
+    if(cont%7==0){
+        var fila=document.createElement("tr");
+        $("table").appendChild(fila);
+        var celda=document.createElement("td");
+        celda.innerHTML="HOLA";
+        document.getElementById("tabla").lastChild.appendChild(celda);
+        cont++;
     } else{
-        document.getElementById("tabla").lastChild.innerHTML="<td><img src='http://lorempixel.com/400/200/?1234567890'></td>";
-        console.log("hola3");
+        var celda=document.createElement("td");
+        celda.innerHTML="HOLA";
+        document.getElementById("tabla").lastChild.appendChild(celda);
+        cont++;
     }
     
+} 
+
+function eliminar(){
+    if(filas[filas.length-1].length==1){
+        var bin=filas.pop();
+    } else if(celdas.length<1){
+        alert("No hay imagenes");
+    } else{
+       var bin=celdas.splice(celdas.length-1,1);
+    }
 }
