@@ -7,16 +7,17 @@ function $(selector){
 }
 
 function insertar(){
+    var date=new Date().getTime();
     if(cont%7==0){
         var fila=document.createElement("tr");
         $("table").appendChild(fila);
         var celda=document.createElement("td");
-        celda.innerHTML="HOLA";
+        celda.innerHTML="<img src='http://lorempixel.com/200/100/?1234567890'"+date+">";
         document.getElementById("tabla").lastChild.appendChild(celda);
         cont++;
     } else{
         var celda=document.createElement("td");
-        celda.innerHTML="HOLA";
+        celda.innerHTML="<img src='http://lorempixel.com/200/100/?1234567890'"+date+">";
         document.getElementById("tabla").lastChild.appendChild(celda);
         cont++;
     }
@@ -24,23 +25,20 @@ function insertar(){
 } 
 
 function eliminar(){
-   /* if(filas[filas.length-1].length==1){
-        var bin=filas.pop();
-    } else if(celdas.length<1){
-        alert("No hay imagenes");
-    } else{
-       tabla.removeChild();
-    }*/
     console.log(cont);
     if(celdas.length>0){
         let ultimaFila=filas[filas.length-1];
-        if(celdas.length-1%7==0){
-            tabla.removeChild(filas[filas.length-1]);
+        console.log("LAST");
+        console.log(ultimaFila);
+        if(cont%7==0 && cont!=0){
+            tabla.removeChild(tabla.lastChild);
+            cont--;
         } else{
             ultimaFila.removeChild(celdas[celdas.length-1]);
             cont--;
         }
     } else{
         alert("No hay imagenes");
+        cont=0;
     }
 }
