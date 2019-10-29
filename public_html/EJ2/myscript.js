@@ -1,7 +1,7 @@
 var cont=0;
 var tabla=document.getElementById("tabla");
-var filas=tabla.getElementsByTagName("tr");
-var celdas=tabla.getElementsByTagName("td");
+var filas=document.getElementsByTagName("tr");
+var celdas=document.getElementsByTagName("td");
 function $(selector){
     return document.querySelector(selector);
 }
@@ -24,11 +24,23 @@ function insertar(){
 } 
 
 function eliminar(){
-    if(filas[filas.length-1].length==1){
+   /* if(filas[filas.length-1].length==1){
         var bin=filas.pop();
     } else if(celdas.length<1){
         alert("No hay imagenes");
     } else{
-       var bin=celdas.splice(celdas.length-1,1);
+       tabla.removeChild();
+    }*/
+    console.log(cont);
+    if(celdas.length>0){
+        let ultimaFila=filas[filas.length-1];
+        if(celdas.length-1%7==0){
+            tabla.removeChild(filas[filas.length-1]);
+        } else{
+            ultimaFila.removeChild(celdas[celdas.length-1]);
+            cont--;
+        }
+    } else{
+        alert("No hay imagenes");
     }
 }
