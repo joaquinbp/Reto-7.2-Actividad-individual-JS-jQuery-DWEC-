@@ -1,3 +1,5 @@
+//Joaquin Bono Pineda
+
 var ocultaHomer=true;
 var ocultaMarge=true;
 var ocultaBart=true;
@@ -7,6 +9,8 @@ var ocultaMaggie=true;
 function $(selector){
     return document.querySelector(selector);
 }
+
+//Event that show or hide the character information when you clikc on its name
 
 $("#homer").addEventListener("click",function(){
     var homer=document.getElementById("pH");
@@ -19,6 +23,8 @@ $("#homer").addEventListener("click",function(){
     }    
 });
 
+//Event that show or hide the character information when you clikc on its name
+
 $("#marge").addEventListener("click",function(){
     var marge=document.getElementById("pM");
     if(ocultaMarge){
@@ -29,6 +35,8 @@ $("#marge").addEventListener("click",function(){
         ocultaMarge=true; 
     }    
 });
+
+//Event that show or hide the character information when you clikc on its name
 
 $("#bart").addEventListener("click",function(){
     var bart=document.getElementById("pB");
@@ -41,6 +49,8 @@ $("#bart").addEventListener("click",function(){
     }    
 });
 
+//Event that show or hide the character information when you clikc on its name
+
 $("#lisa").addEventListener("click",function(){
     var lisa=document.getElementById("pL");
     if(ocultaLisa){
@@ -51,6 +61,8 @@ $("#lisa").addEventListener("click",function(){
         ocultaLisa=true; 
     }    
 });
+
+//Event that show or hide the character information when you clikc on its name
 
 $("#maggie").addEventListener("click",function(){
     var maggie=document.getElementById("pMgg");
